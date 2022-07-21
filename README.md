@@ -24,9 +24,10 @@ Any genre of any television show users can now add that hero to our bank of hero
 
 ## User Stories
 - Users should be able to access the site
-- Users should be prompted to first search for a hero
-- Users should be able to find information on their heroes
-- User should be able to search for another Hero
+- As a user I should be able to signup / login to my created account
+- As a user I should only be able to Create, Edit, Delete my own blogs.
+- As a user I should be able to view Blogs created by other users.
+- As a user I should be able to easily navigate through the website.
 
 ## Screenshots
 
