@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Written by {{blog.user.username}}</h1>
+
+  <div class="card">
+    <a href="{% url 'detail' blog.id %}">
+    <div class="card-content">
+      <span class="card-title">{{ blog.title }}</span>
+      <h2>Written By {{blog.user.username}}</h2>
+      <img src='{{blog.img}}' alt="Main Image">
+      <p>Description: {{ blog.description }}</p>
+      {% for t in blog.tags.all %}
+      <div class="card">
+        <div class="card-content">
+            <span>{{t}}</span>
+        </div>  
+    </div>
+
+      {% endfor %}
+    </div>
+  </div>
+
+    <div class="card-action">
+        <a href="{% url 'blog_update' blog.id %}">Edit</a>
+        <a href="{% url 'blog_delete' blog.id %}">Delete</a>
+    </div>
+
+{% endblock %}

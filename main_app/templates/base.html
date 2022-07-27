@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Blogger</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" ></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <header>
+            <nav>
+                <div class="nav-wrapper">
+                  <a href="/" class="brand-logo"><i class="material-icons">cloud</i>Blogger-JP</a>
+                  
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                      <form class="search-form">
+                      <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                      </div>
+                    </form></li>
+                    <li><a href="/about">About</a></li>
+                    <!-- <li><a href="/accounts/login">Signup/Login</a></li> -->
+                    {% if user.is_authenticated %}
+                      <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                      <li><a href="{% url 'login' %}"><span>Log In</span> </a></li>
+                    {% endif %}
+                  </ul>
+                </div>
+                
+              </nav>
+              
+              
+        </header>
+        <section>
+          {% if user.is_authenticated %}
+            <div class="collection">
+              <a href="{% url 'blog_create' %}" class="collection-item">Create A Blog</a>
+              <a href="{% url 'blog' %}" class="collection-item active">View Blogs</a>
+            </div>
+            {% endif %}  
+        </section>
+        <main class="container">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="page-footer">
+            <div class="center">All Rights Reserved, &copy; 2019 Blogger-JP &nbsp;</div>
+        </footer>
+    </body>
+</html>

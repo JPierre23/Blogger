@@ -1,0 +1,23 @@
+*{
+    outline: 2px solid gold;
+    
+}
+
+body{
+    width: 85%;
+    margin: 0 auto;
+    
+}
+
+header{
+    justify-content: space-between;
+    position: relative;
+    display: flex;
+}
+.search-form{
+    padding: 20px;
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-content: center;
+    
+}

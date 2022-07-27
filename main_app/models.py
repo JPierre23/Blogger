@@ -17,11 +17,13 @@ class Tags(models.Model):
     
 
 class Blog(models.Model):
-    title=models.CharField(max_length=100),
-    img=models.CharField(max_length=250),
+    
+    title=models.CharField(max_length=100)
+    img=models.CharField(max_length=250)
     date=models.DateField('Date',default=datetime.now)
-    tags=models.ManyToManyField(Tags),
+    # tags=models.ManyToManyField(Tags)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    info=models.CharField(max_length=2000)
 
     def __str__(self):
         return self.title
