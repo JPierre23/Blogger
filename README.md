@@ -27,6 +27,7 @@ Any genre of any television show users can now add that hero to our bank of hero
 - As a user I should be able to signup / login to my created account
 - As a user I should only be able to Create, Edit, Delete my own blogs.
 - As a user I should be able to view Blogs created by other users.
+- As a user I should be able to leave comments on blogs.
 - As a user I should be able to easily navigate through the website.
 
 ## Screenshots
