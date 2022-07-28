@@ -32,7 +32,19 @@ header{
     text-align: center;
     justify-content: center;
 }
+
 a{
     color: #90caf9 ;
     text-decoration: none;
+}
+
+footer{
+    position:fixed;
+    bottom:0;
+    width: 85%;
+}
+.bg-img{
+   align-items: center;
+   width: 100%;
+   height: auto;
 }
