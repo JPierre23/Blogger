@@ -1,7 +1,10 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Comment, Blog, Tags
+from .models import Comment, Blog
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
 # Create your views here.
 
 def home(request):
@@ -9,6 +12,8 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
+
+
 
 def blog_index(request):
     blog = Blog.objects.all()
@@ -23,17 +28,24 @@ def blog_detail(request,blog_id):
         
         })
 
+class SignUpView(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/signup.html"
+
+
 class BlogCreate(CreateView):
     model=Blog
     fields={'title','img','info'}
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+    success_url='/blog/'
     
 
 class BlogUpdate(UpdateView):
     model=Blog
-    fields=['title','img']
+    fields=['title','img','info']
     success_url='/blog/'
 
 class BlogDelete(DeleteView):

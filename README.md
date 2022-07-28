@@ -9,7 +9,8 @@
 | Project Name | Blogger |
 | Description | A website where users can read articles posted by our community members. |
 | Developers | Jonathan Pierre |
-| Live Website | N/A|
+| Live Website | https://blogger-jp.herokuapp.com/
+   77e928b..ea0251a |
 | Repo | https://github.com/JPierre23/Blogger |
 | Trello Board | https://trello.com/b/MUa4GM5I/blogger |
 
@@ -17,7 +18,9 @@
 -HTML5
 -CSS3
 -JavaScript
--JQuery
+-Python
+-Django
+-Meterilize
 
 ## Problem Being Solved and Target Market
 Any genre of any television show users can now add that hero to our bank of heroes
@@ -33,9 +36,17 @@ Any genre of any television show users can now add that hero to our bank of hero
 ## Screenshots
 
 ![Blogger ERD](./ERD.jpeg)
+![Blogger Trello](./trello.jpeg)
+![Blogger Home](./home.jpeg)
+![Blogger Show](./show.jpeg)
+![Blogger Detail](./detail.jpeg)
+
+
 
 
 ## Future Enhancements
+- Work on Comments and add full Crud
+- Search Articles through tags
 - Chat Bot
 - Verified Users
 - Categorize articles

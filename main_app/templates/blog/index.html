@@ -8,10 +8,8 @@
     <a href="{% url 'detail' b.id %}">
     <div class="card-content">
       <span class="card-title">{{ b.title }}</span>
-      <img src={{b.img}} alt="Main Image">
-      {% for t in b.tags.all %}
-        <span>{{t}}</span>
-      {% endfor %}
+      <img class="materialboxed" width="650" src='{{b.img}}'>
+      
     </div>
   </div>
 {% endfor %}

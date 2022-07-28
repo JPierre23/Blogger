@@ -1,5 +1,5 @@
 *{
-    outline: 2px solid gold;
+    /* outline: 2px solid gold; */
     
 }
 
@@ -13,6 +13,7 @@ header{
     justify-content: space-between;
     position: relative;
     display: flex;
+    
 }
 .search-form{
     padding: 20px;
@@ -20,4 +21,18 @@ header{
     flex-flow: row wrap;
     align-content: center;
     
+}
+
+.img-d{
+    object-fit: cover;
+    width: 40%;
+    height: auto;
+}
+.text-d{
+    text-align: center;
+    justify-content: center;
+}
+a{
+    color: #90caf9 ;
+    text-decoration: none;
 }
